@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ujitarobby_attendance_system?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.autocommit">false</property>
+    <property name="hibernate.connection.isolation">2</property>
+    <mapping class="com.nurul.entity.Rolelecturer"/>
+    <mapping class="com.nurul.entity.ClassScheduleId"/>
+    <mapping class="com.nurul.entity.AcademicYear"/>
+    <mapping class="com.nurul.entity.Department"/>
+    <mapping class="com.nurul.entity.Room"/>
+    <mapping class="com.nurul.entity.Semester"/>
+    <mapping class="com.nurul.entity.ClassSchedule"/>
+    <mapping class="com.nurul.entity.Student"/>
+    <mapping class="com.nurul.entity.Faculty"/>
+    <mapping class="com.nurul.entity.Lecturer"/>
+    <mapping class="com.nurul.entity.Course"/>
+  </session-factory>
+</hibernate-configuration>
