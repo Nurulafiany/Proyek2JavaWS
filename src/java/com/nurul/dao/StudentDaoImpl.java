@@ -5,12 +5,12 @@
  */
 package com.nurul.dao;
 
-import com.nurul.entity.Faculty;
+import com.nurul.entity.Student;
 import com.nurul.utility.DaoService;
 import com.nurul.utility.HibernateUtil;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Criteria;
-import org.hibernate.FetchMode;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -20,10 +20,10 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author Nurul 1672035
  */
-public class FacultyDaoImpl implements DaoService<Faculty> {
+public class StudentDaoImpl implements DaoService<Student> {
 
     @Override
-    public int save(Faculty t) {
+    public int save(Student t) {
         int result = 0;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -39,7 +39,7 @@ public class FacultyDaoImpl implements DaoService<Faculty> {
     }
 
     @Override
-    public int delete(Faculty t) {
+    public int delete(Student t) {
         int result = 0;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -55,7 +55,7 @@ public class FacultyDaoImpl implements DaoService<Faculty> {
     }
 
     @Override
-    public int update(Faculty t) {
+    public int update(Student t) {
         int result = 0;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -71,25 +71,26 @@ public class FacultyDaoImpl implements DaoService<Faculty> {
     }
 
     @Override
-    public List<Faculty> findAll() {
+    public List<Student> findAll() {
+        List<Student> students = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
-        List<Faculty> facultys = session.createCriteria(Faculty.class).
-                setFetchMode("faculty_id", FetchMode.JOIN).list();
+        Criteria criteria = session.createCriteria(Student.class);
+        students.addAll(criteria.list());
         session.close();
-        return facultys;
+        return students;
     }
 
     @Override
-    public Faculty find(Object object) {
+    public Student find(Object object) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Criteria criteria = session.createCriteria(Faculty.class)
+        Criteria criteria = session.createCriteria(Student.class)
                 .add(Restrictions.eq("name", object.toString()))
                 .setMaxResults(1);
         //name diatas untuk mengubah nama sesuai yang diinginkan dan sesuai yg di dbnya
         if (criteria.list().isEmpty()) {
             return null;
         }
-        return ((Faculty) criteria.list().get(0));
+        return ((Student) criteria.list().get(0));
     }
 
 }

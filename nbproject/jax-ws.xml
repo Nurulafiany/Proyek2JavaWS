@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="Proyek2WebService">
-      <implementation-class>com.nurul.ws.Proyek2WebService</implementation-class>
+    <service name="DepartmentWS">
+      <implementation-class>com.nurul.ws.DepartmentWS</implementation-class>
+    </service>
+    <service name="FacultyWS">
+      <implementation-class>com.nurul.ws.FacultyWS</implementation-class>
+    </service>
+    <service name="RoomWS">
+      <implementation-class>com.nurul.ws.RoomWS</implementation-class>
+    </service>
+    <service name="academicYearWS">
+      <implementation-class>com.nurul.ws.academicYearWS</implementation-class>
+    </service>
+    <service name="roleLecturerWS">
+      <implementation-class>com.nurul.ws.roleLecturerWS</implementation-class>
+    </service>
+    <service name="courseWS">
+      <implementation-class>com.nurul.ws.courseWS</implementation-class>
+    </service>
+    <service name="StudentWS">
+      <implementation-class>com.nurul.ws.StudentWS</implementation-class>
+    </service>
+    <service name="SemesterWS">
+      <implementation-class>com.nurul.ws.SemesterWS</implementation-class>
+    </service>
+    <service name="LecturerWS">
+      <implementation-class>com.nurul.ws.LecturerWS</implementation-class>
+    </service>
+    <service name="ClassScheduleWS">
+      <implementation-class>com.nurul.ws.ClassScheduleWS</implementation-class>
     </service>
   </services>
   <clients/>
